@@ -10,7 +10,7 @@ resource "digitalocean_project" "dalvarezuk_project" {
 resource "digitalocean_app" "dalvarezuk_app" {
   spec {
     name = "dalvarezuk_app"
-    region = lon
+    region = "lon"
     domain {
       name = "dalvarez.uk"
     }
