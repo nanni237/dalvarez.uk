@@ -3,7 +3,7 @@ resource "digitalocean_project" "dalvarezuk_project" {
   description = "one"
   purpose = "Web Application"
   environment = "Production"
-  resources = [digitalocean_app.dalvarezuk_app]
+  resources = [digitalocean_app.dalvarezuk_app.urn]
   is_default = false
 }
 
@@ -15,7 +15,6 @@ resource "digitalocean_app" "dalvarezuk_app" {
       name = "dalvarez.uk"
     }
     static_site {
-      content {
         name = "dalvarezuk_main"
         source_dir = "hugo"
         output_dir = "public"
@@ -28,7 +27,6 @@ resource "digitalocean_app" "dalvarezuk_app" {
         routes {
             path = "/"
         }
-      }
     }
   }
 }
