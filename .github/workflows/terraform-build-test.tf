@@ -21,6 +21,6 @@ module "dalvarezuk" {
   source             = "../../terraform"
   cloudflare_zone_id = "null"
   cloudflare_token   = "nullnullnullnullnullnullnullnullnullnull"
-  do_token           = "null"
+  digitalocean_token           = "null"
 
 }
