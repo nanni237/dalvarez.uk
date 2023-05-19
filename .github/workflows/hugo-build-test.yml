@@ -1,0 +1,32 @@
+name: 'Hugo-Build-Test'
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    name: 'Hugo-Build-Test'
+    runs-on: ubuntu-latest
+    environment: build-test
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        submodules: true
+        fetch-depth: 0
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+
+    - name: Hugo Build
+      working-directory: ./hugo
+      run: hugo
